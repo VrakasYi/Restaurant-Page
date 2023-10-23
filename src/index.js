@@ -1,21 +1,38 @@
-import { initPageLoad } from './initPageLoad';
+import { initPageLoad } from './initPageLoad.js';
 import { menuTab } from './menu.js';
 import { contactTab } from './contact.js';
+
 initPageLoad();
 
 const contentDiv = document.getElementById('content');
 
-document.getElementById('home').addEventListener('click', () => {
-    contentDiv.innerHTML = '';
-    initPageLoad();
-})
+contentDiv.addEventListener('click', (event) => {
+    // Get the button's ID and perform the corresponding action
+    if (event.target.tagName === 'BUTTON') {
+        const buttonId = event.target.id;
+        contentDiv.innerHTML = ''; // Clear the contentDiv
+        
+        if (buttonId === 'home') {
+            initPageLoad();
+        } else if (buttonId === 'menu') {
+            menuTab();
+        } else if (buttonId === 'contact') {
+            contactTab();
+        }
+    }
+});
 
-document.getElementById('menu').addEventListener('click', () => {
-    contentDiv.innerHTML = '';
-    menuTab();
-})
+// document.getElementById('home').addEventListener('click', () => {
+//     contentDiv.innerHTML = '';
+//     initPageLoad();
+// })
 
-document.getElementById('contact').addEventListener('click', () => {
-    contentDiv.innerHTML = '';
-    contactTab();
-})
+// document.getElementById('menu').addEventListener('click', () => {
+//     contentDiv.innerHTML = '';
+//     menuTab();
+// })
+
+// document.getElementById('contact').addEventListener('click', () => {
+//     contentDiv.innerHTML = '';
+//     contactTab();
+// })

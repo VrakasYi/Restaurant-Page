@@ -1,3 +1,4 @@
+import Chef from './img/chef.png'
 export function initPageLoad() {
     const containerDiv = document.getElementById('content')
     //create the divs and tabs
@@ -26,7 +27,8 @@ export function initPageLoad() {
     contact.classList.remove('active');
     tabDiv.id = 'tabDiv'
     chefCont.id = 'chef';
-    chef.src = './img/chef.png';
+    // chef.src = './img/chef.png';
+    chef.src = Chef;
     home.id = 'home';
     menu.id = 'menu';
     contact.id = 'contact';
